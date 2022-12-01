@@ -17,10 +17,39 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/product', function () {
-    return view('product-single');
+Route::get('/all-products', function () {
+    return view('shop.all_products');
 });
 
-Route::get('/shop', function () {
-    return view('shop');
+Route::get('/product-details', function () {
+    return view('shop.product_details');
 });
+
+Route::get('/login', function () {
+    return view('users.login');
+});
+
+Route::get('/signup-new-user', function () {
+    return view('users.signup_user');
+});
+
+Route::get('/signup-new-seller', function () {
+    return view('users.signup_seller');
+});
+
+Route::get('/wishlist', function () {
+    return view('orders.wishlist');
+});
+
+Route::get('/cart', function () {
+    return view('orders.cart');
+});
+
+Route::get('/checkout', function () {
+    return view('orders.checkout');
+});
+
+Route::get('/receipt', function () {
+    return view('orders.receipt');
+});
+

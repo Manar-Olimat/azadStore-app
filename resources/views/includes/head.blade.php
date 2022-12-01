@@ -1,7 +1,7 @@
 <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Aviato | E-commerce template</title>
+  <title>AZAD STORE</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -11,20 +11,7 @@
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Themefisher Constra HTML Template v1.0">
   
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
   
-  <!-- Themefisher Icon font -->
-  <!-- <link rel="stylesheet" href="plugins/themefisher-font/style.css"> -->
-  <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-  
-  <!-- Animate css -->
-  <!-- <link rel="stylesheet" href="plugins/animate/animate.css"> -->
-  <!-- Slick Carousel -->
-  <!-- <link rel="stylesheet" href="plugins/slick/slick.css"> -->
-  <!-- <link rel="stylesheet" href="plugins/slick/slick-theme.css"> -->
-
     {{-- font awesome --}}
 <script src="https://kit.fontawesome.com/8b42dcad4f.js" crossorigin="anonymous"></script>
 
@@ -34,4 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cinzel:wght@500&family=El+Messiri:wght@600&family=Ibarra+Real+Nova:ital,wght@1,500;1,700&family=Kalam:wght@700&family=Quicksand&family=Roboto+Slab:wght@200&family=Scheherazade+New&family=Tajawal:wght@300&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  @vite('resources/css/app.css')
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  {{-- <link rel="stylesheet" href="css/style.css"> --}}
