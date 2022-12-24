@@ -52,18 +52,18 @@
         </div>
     </article> --}}
     <section class="bg-white dark:bg-gray-900">
-        <div class="container px-6 py-10 mx-auto">
-            <div class="text-center">
+        <div >
+            {{-- <div class="text-center">
                 <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">From the blog</h1>
     
                 <p class="max-w-lg mx-auto mt-4 text-gray-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt, laudantium
                     quia tempore delect
                 </p>
-            </div>
+            </div> --}}
     
-            <div class="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">
-                <div>
+            <div class="grid grid-cols-1 mt-2 lg:grid-cols-2">
+                {{-- <div>
                     <img class="relative z-10 object-cover w-full rounded-md h-96" src="https://images.unsplash.com/photo-1644018335954-ab54c83e007f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
     
                     <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
@@ -78,12 +78,12 @@
     
                         <p class="mt-3 text-sm text-blue-500">21 October 2019</p>
                     </div>
-                </div>
+                </div> --}}
     
-                <div>
+                <div class="all_products_banner">
                     <img class="relative z-10 object-cover w-full rounded-md h-96" src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
     
-                    <div class="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
+                    <div class="relative shop_desc z-20 mb-8 p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
                         <a href="#" class="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
                             How to use sticky note for problem solving
                         </a>
@@ -421,141 +421,13 @@
                     Explore Products
                 </h2>
             </div>
-
             <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4">
-                <a href="/product-details" class="relative block border border-gray-100">
-                    <button type="button" class="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
-                        <span class="sr-only">Wishlist</span>
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg>
-                    </button>
 
-                    <img alt="Toy"
-                        src="https://images.unsplash.com/photo-1603356033288-acfcb54801e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                        class="h-56 w-full object-contain" />
-
-                    <div class="p-6">
-                        <p class="text-sm font-medium text-gray-600">$14.99</p>
-
-                        <h3 class="mt-1 text-lg font-bold">Robot Toy</h3>
-
-                        <button type="button"
-                            class="mt-4 flex w-full items-center justify-center rounded-sm bg-yellow-500 px-8 py-4">
-                            <span class="text-sm font-medium"> Add to Cart </span>
-
-                            <svg class="ml-1.5 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                            </svg>
-                        </button>
-                    </div>
-                </a>
-
-                <a href="#" class="relative block border border-gray-100">
-                    <button type="button" class="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
-                        <span class="sr-only">Wishlist</span>
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg>
-                    </button>
-
-                    <img alt="Toy"
-                        src="https://images.unsplash.com/photo-1603356033288-acfcb54801e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                        class="h-56 w-full object-contain" />
-
-                    <div class="p-6">
-                        <p class="text-sm font-medium text-gray-600">$14.99</p>
-
-                        <h3 class="mt-1 text-lg font-bold">Robot Toy</h3>
-
-                        <button type="button"
-                            class="mt-4 flex w-full items-center justify-center rounded-sm bg-yellow-500 px-8 py-4">
-                            <span class="text-sm font-medium"> Add to Cart </span>
-
-                            <svg class="ml-1.5 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                            </svg>
-                        </button>
-                    </div>
-                </a>
-
-                <a href="#" class="relative block border border-gray-100">
-                    <button type="button" class="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
-                        <span class="sr-only">Wishlist</span>
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg>
-                    </button>
-
-                    <img alt="Toy"
-                        src="https://images.unsplash.com/photo-1603356033288-acfcb54801e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                        class="h-56 w-full object-contain" />
-
-                    <div class="p-6">
-                        <p class="text-sm font-medium text-gray-600">$14.99</p>
-
-                        <h3 class="mt-1 text-lg font-bold">Robot Toy</h3>
-
-                        <button type="button"
-                            class="mt-4 flex w-full items-center justify-center rounded-sm bg-yellow-500 px-8 py-4">
-                            <span class="text-sm font-medium"> Add to Cart </span>
-
-                            <svg class="ml-1.5 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                            </svg>
-                        </button>
-                    </div>
-                </a>
-
-                <a href="#" class="relative block border border-gray-100">
-                    <button type="button" class="absolute right-4 top-4 rounded-full bg-black p-2 text-white">
-                        <span class="sr-only">Wishlist</span>
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg>
-                    </button>
-
-                    <img alt="Toy"
-                        src="https://images.unsplash.com/photo-1603356033288-acfcb54801e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                        class="h-56 w-full object-contain" />
-
-                    <div class="p-6">
-                        <p class="text-sm font-medium text-gray-600">$14.99</p>
-
-                        <h3 class="mt-1 text-lg font-bold">Robot Toy</h3>
-
-                        <button type="button"
-                            class="mt-4 flex w-full items-center justify-center rounded-sm bg-yellow-500 px-8 py-4">
-                            <span class="text-sm font-medium"> Add to Cart </span>
-
-                            <svg class="ml-1.5 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                            </svg>
-                        </button>
-                    </div>
-                </a>
+            {{-- display products from database --}}
+            @foreach ($products as $item)
+ <x-product-card :item="$item"/> 
+@endforeach
             </div>
-
             <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4">
                 <a href="#" class="relative block border border-gray-100">
                     <button type="button" class="absolute right-4 top-4 rounded-full bg-black p-2 text-white">

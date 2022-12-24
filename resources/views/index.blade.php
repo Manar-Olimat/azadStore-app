@@ -2,8 +2,8 @@
 
 @section('content')
 
-<x-index-discount-hero/>  
-{{-- <x-index-noDiscount-hero/>   --}}
+{{-- <x-index-discount-hero/>   --}}
+<x-index-noDiscount-hero/>  
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 

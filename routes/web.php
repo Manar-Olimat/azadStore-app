@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,29 +14,59 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Common Resource Routes:
+// index - Show all listings
+// show - Show single listing
+// create - Show form to create new listing
+// store - Store new listing
+// edit - Show form to edit listing
+// update - Update listing
+// destroy - Delete listing  
+
+// new route => new controller method => new view 
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/all-products', function () {
-    return view('shop.all_products');
-});
+Route::get('/all-products', [ProductsController::class,'index']);
 
 Route::get('/product-details', function () {
     return view('shop.product_details');
 });
 
-Route::get('/login', function () {
-    return view('users.login');
+Route::get('/about-us', function () {
+    return view('aboutus');
 });
 
-Route::get('/signup-new-user', function () {
-    return view('users.signup_user');
+Route::get('/contact-us', function () {
+    return view('contact');
 });
+
+// *************************
+// REGISTER 
+// *************************
+//show register/create form
+Route::get('/signup-new-user',[UserController :: class,'create']);
+
+//create new user
+Route::post('/signup-new-user/new',[UserController :: class,'store']);
+
+//log user out
+Route::post('/logout',[UserController :: class,'logout']);
+
+//show log in form
+Route::get('/login',[UserController :: class,'login']);
+
+//login user
+Route::post('/users/authenticate',[UserController :: class,'authenticate']);
+
 
 Route::get('/signup-new-seller', function () {
     return view('users.signup_seller');
+});
+Route::get('/profile', function () {
+    return view('users.user_profile');
 });
 
 Route::get('/wishlist', function () {

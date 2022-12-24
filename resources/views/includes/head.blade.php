@@ -14,6 +14,7 @@
   
     {{-- font awesome --}}
 <script src="https://kit.fontawesome.com/8b42dcad4f.js" crossorigin="anonymous"></script>
+{{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
   {{-- Google Fonts --}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
