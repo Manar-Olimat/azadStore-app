@@ -22,34 +22,64 @@ footer{
     padding: 10px; */
     margin-top: 50px;
 }
-
+.product_img{
+  width: 300px;
+  height: 224px;
+}
 .log_btn{
     color: white;
     background-color: #4e3de3;
     /* background: linear-gradient(90deg, rgba(103,58,183,1) 0%, rgba(134,87,254,1) 43%, rgba(237,231,246,1) 100%); */
 }
 
+.text_banner{
+  color: #4e3de3;
+}
 .no_discount_hero{
     background-color: #ede7f694;
 }
 
-.hotOffers .swiper{
-    border: 1px solid red;
-    background-color: red;
+.discount_price .product_price_discount{
+  width: fit-content;
+  border: 1px solid red;
+  border-radius:25px ;
+  background-color: red;
+  color: white;
+  -webkit-border-radius:25px ;
+  -moz-border-radius:25px ;
+  -ms-border-radius:25px ;
+  -o-border-radius:25px ;
+}
+
+
+.discount_price .product_price{
+  width: fit-content;
+  /* border: 1px solid red; */
+  border-radius:25px ;
+  /* background-color: red; */
+  /* color: white; */
+  text-decoration: line-through;
+  -webkit-border-radius:25px ;
+  -moz-border-radius:25px ;
+  -ms-border-radius:25px ;
+  -o-border-radius:25px ;
 }
 
 /* .swiper-slide a img{
     height: 200px;
 } */
-
+.filter{
+  padding: 0px 40px;
+ 
+}
 .drawer_filter{
     margin-top: 5%;
-    margin-left: 16%;
+    margin-left: 6%;
 }
 
 .drop_filter{
     margin-top: 5%;
-    margin-left: 50%; 
+    margin-left: 70%; 
 }
 
 .brand_name{
@@ -70,7 +100,7 @@ font-size: 40px;
 
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     margin: 0;
   }
 
@@ -79,12 +109,19 @@ font-size: 40px;
 
   }
 
-  .search{
+  .search {
     left: 300px;
+
+  }
+
+  .search button{
+    background-color: #4e3de3;
+
   }
 
   .top-header nav{
     padding: 0px 40px;
+    background:#e8ebed ;
   }
 
   .buttom_header nav{
@@ -118,5 +155,24 @@ cursor: pointer;
     /* width:80%; */
     padding: 0px 40px;
     background-color: #dbd9f19c;
+
+}
+
+.become_seller_btn{
+  background-color: #8657FE;
+}
+
+.seller_reg{
+  width: 500px;
+  padding: 20px 40px;
+
+}
+
+footer{
+  /* border: 1px solid red; */
+  background: #e8ebed;
+}
+.inner-footer{
+  padding: 0px 40px;
 
 }

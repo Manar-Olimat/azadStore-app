@@ -13,29 +13,28 @@
   >
     <div class="max-w-xl text-center sm:text-left">
       <h1 class="text-3xl font-extrabold sm:text-5xl">
-        Let us find your
+        Explore What You Love in
 
-        <strong class="block font-extrabold text-rose-700">
-          Forever Home.
+        <strong class="block font-extrabold text_banner">
+          AZAD STORE.
         </strong>
       </h1>
 
       <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
-        tenetur fuga ducimus numquam ea!
+        We support independent sellers in Jordan. And offers special, extraordinary items designed just as how you want it!
       </p>
 
       <div class="mt-8 flex flex-wrap gap-4 text-center">
         <a
-          href="#"
-          class="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+          href="/all-products"
+          class="block w-full rounded log_btn px-12 py-3 text-sm font-medium text-white shadow focus:outline-none focus:ring  sm:w-auto"
         >
-          Get Started
+          Shop now
         </a>
 
         <a
-          href="#"
-          class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+          href="/about-us"
+          class="block w-full text_banner rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow focus:outline-none focus:ring  sm:w-auto"
         >
           Learn More
         </a>

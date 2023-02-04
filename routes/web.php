@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,15 +28,11 @@ use App\Http\Controllers\UserController;
 
 // new route => new controller method => new view 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [ProductsController::class, 'index_Landing']);
 
 Route::get('/all-products', [ProductsController::class,'index']);
 
-Route::get('/product-details', function () {
-    return view('shop.product_details');
-});
+Route::get('/product-details/{id}', [ProductsController::class, 'show']);
 
 Route::get('/about-us', function () {
     return view('aboutus');
@@ -61,21 +60,37 @@ Route::get('/login',[UserController :: class,'login']);
 //login user
 Route::post('/users/authenticate',[UserController :: class,'authenticate']);
 
+// register with google account
+Route::get('auth/google',[UserController :: class,'redirectToGoogle'] )->name('auth.google');
+Route::get('auth/google/callback',[UserController :: class,'handleGoogleCallback'] );
 
-Route::get('/signup-new-seller', function () {
-    return view('users.signup_seller');
-});
+
+// register with facebook account
+Route::get('auth/facebook',[UserController :: class,'redirectToFacebook'] );
+Route::get('callback/facebook',[UserController :: class,'handleFacebookCallback'] );
+
+Route::get('/signup-new-seller', [StoreController::class, 'create']);
+Route::get('/store', [StoreController::class, 'show']);
+Route::post('/signup-new-seller/new', [StoreController::class, 'store']);
+Route::post('/product/new', [ProductsController::class, 'store']);
+
+
+
 Route::get('/profile', function () {
     return view('users.user_profile');
 });
+// show wishlist view 
+Route::get('/wishlist', [WishlistController::class, 'index']);
 
-Route::get('/wishlist', function () {
-    return view('orders.wishlist');
-});
+// save product to wishlist 
+Route::post('/wishlistAddNew', [WishlistController::class, 'store']);
+Route::get('/removeFromWishlist', [WishlistController::class, 'delete']);
 
-Route::get('/cart', function () {
-    return view('orders.cart');
-});
+//cart
+
+Route::get('/cart',[CartController::class, 'index']);
+Route::post('/addToCart',[CartController::class, 'store']);
+Route::get('/removeFromCart',[CartController::class, 'delete']);
 
 Route::get('/checkout', function () {
     return view('orders.checkout');
@@ -84,4 +99,5 @@ Route::get('/checkout', function () {
 Route::get('/receipt', function () {
     return view('orders.receipt');
 });
+
 

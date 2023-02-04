@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 class UserController extends Controller
 {
@@ -88,7 +91,105 @@ public function logout(Request $request){
 
 
 
+// GOOGLE
 
+public function redirectToGoogle(){
+  return Socialite::driver('google')->redirect();
+
+}
+
+public function handleGoogleCallback(){
+
+  try {
+        
+    $user = Socialite::driver('google')->user();
+    // dd($user);
+      // echo ('test successful');
+      // check if they are an existing user
+$existingUser=User::where('google_id',$user->id)->first();
+
+
+if($existingUser){
+      Auth::login($existingUser, true);
+}
+
+else{
+// create a new user
+      $newUser = User::create(
+        [
+          'name' => $user->name,
+          'email'=>$user->email,
+          'google_id' => $user->id,
+          'password'=> encrypt('123456Manar@')
+        ]
+      );
+      Auth::login($newUser, true);
+
+}
+
+    return redirect()->to('/');
+
+} catch (Exception $e) {
+      // return redirect('/login');
+    // dd($e->getMessage());
+      echo ($e->getMessage());
+}
+
+
+
+}
+
+
+
+// FACEBOOK
+
+public function redirectToFacebook(){
+  return Socialite::driver('facebook')->redirect();
+
+}
+
+public function handleFacebookCallback(){
+
+  
+
+    try {
+        
+      $user = Socialite::with('facebook')->user();
+      // dd($user->id);
+      $id = $user->id;
+  $existingUser=User::where('facebook_id',$id)->first();
+  
+  
+  if($existingUser){
+        Auth::login($existingUser, true);
+  }
+  
+  else{
+  // create a new user
+        $newUser = User::create(
+          [
+            'name' => $user->name,
+            'email'=>$user->email,
+            'facebook_id' => $id,
+            'password'=> encrypt('123456Manar@')
+
+          ]
+        );
+        Auth::login($newUser, true);
+  
+  }
+  
+      return redirect()->to('/');
+  
+  } catch (Exception $e) {
+        // return redirect('/login');
+      // dd($e->getMessage());
+        echo ($e->getMessage());
+  }
+  
+  
+
+}
 
 
 
