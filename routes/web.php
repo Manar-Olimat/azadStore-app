@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,13 +93,37 @@ Route::get('/removeFromWishlist', [WishlistController::class, 'delete']);
 Route::get('/cart',[CartController::class, 'index']);
 Route::post('/addToCart',[CartController::class, 'store']);
 Route::get('/removeFromCart',[CartController::class, 'delete']);
+Route::get('/checkout',[CartController::class, 'checkout']);
+Route::get('/pay',[CartController::class, 'payment']);
 
-Route::get('/checkout', function () {
-    return view('orders.checkout');
-});
+Route::post('/addReview',[ReviewsController::class, 'store']);
+
+
 
 Route::get('/receipt', function () {
     return view('orders.receipt');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard');
+});
+
+Route::get('/dashboard_products',[DashboardController::class, 'productList']);
+Route::get('/newProduct',[DashboardController::class, 'addProduct']);
+Route::post('/addNewProduct',[DashboardController::class, 'storeNewProduct']);
+Route::get('/editProduct/{id}',[DashboardController::class, 'editProduct']);
+Route::get('/removeProduct',[DashboardController::class, 'removeProdeuct']);
+
+
+Route::get('/dashboard_stores', function () {
+    return view('dashboard.stores');
+});
+Route::get('/dashboard_users', function () {
+    return view('dashboard.users');
+});
+
+Route::get('/dashboard_orders', function () {
+    return view('dashboard.orders');
 });
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reviews;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -62,7 +63,18 @@ public function index_landing(){
 
 public function show($id){
         $product = Products::find($id);
-        return view('shop.product_details', ['product' => $product]);
+        $reviews = Reviews::where('product_id', $id)->get();
+        $rateAvg = 0;
+        foreach ($reviews as $value) {
+            # code...
+            $rateAvg += $value->rate;
+
+        }
+        // dd($rateAvg);
+        if(!empty(count($reviews))){
+        $rateAvg = round($rateAvg / count($reviews),1);
+}
+        return view('shop.product_details', ['product' => $product,'reviews' => $reviews,'rateAvg' => $rateAvg]);
 }
 
 }

@@ -3,7 +3,7 @@
 @section('content')
 
 
-<section class="text-gray-600 body-font overflow-hidden">
+{{-- <section class="text-gray-600 body-font overflow-hidden">
     <div class="container px-5 py-24 mx-auto">
       <div class="lg:w-4/5 mx-auto flex flex-wrap">
         <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
@@ -128,7 +128,6 @@
             @endif
             <form action="/addToCart" method="POST">
               @csrf
-              {{-- @method('POST') --}}
               <input type="hidden" name="product_id" id="product_id" value={{$product->id}}>
               <input type="number" name="quantity" id="quantity" >
               
@@ -149,22 +148,15 @@
   </section>
   
 
-<section>
-  <!--
-  This component uses @tailwindcss/typography
+<section> --}}
 
-  yarn add @tailwindcss/typography
-  npm install @tailwindcss/typography
-
-  plugins: [require('@tailwindcss/typography')]
--->
 
 <section>
     <div class="relative mx-auto max-w-screen-xl px-4 py-8">
       <div>
-        <h1 class="text-2xl font-bold lg:text-3xl">Simple Clothes Basic Tee</h1>
+        <h1 class="text-2xl font-bold lg:text-3xl">{{$product->name}}</h1>
   
-        <p class="mt-1 text-sm text-gray-500">SKU: #012345</p>
+        {{-- <p class="mt-1 text-sm text-gray-500">SKU: #012345</p> --}}
       </div>
   
       <div class="grid gap-8 lg:grid-cols-4 lg:items-start">
@@ -172,8 +164,8 @@
           <div class="relative mt-4">
             <img
               alt="Tee"
-              src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-              class="h-72 w-full rounded-xl object-cover lg:h-[540px]"
+              src={{$product->images}}
+              class="h-72 w-full rounded-xl object-cover lg:h-[540px] "
             />
   
             <div
@@ -198,7 +190,7 @@
             </div>
           </div>
   
-          <ul class="mt-1 flex gap-1">
+          {{-- <ul class="mt-1 flex gap-1">
             <li>
               <img
                 alt="Tee"
@@ -230,145 +222,61 @@
                 class="h-16 w-16 rounded-md object-cover"
               />
             </li>
-          </ul>
+          </ul> --}}
         </div>
   
         <div class="lg:sticky lg:top-0">
-          <form class="space-y-4 lg:pt-8">
+            
+
+            
+  
             <fieldset>
-              <legend class="text-lg font-bold">Color</legend>
+              <legend class="text-lg font-bold">Category</legend>
   
               <div class="mt-2 flex gap-1">
-                <label for="color_green" class="cursor-pointer">
-                  <input
-                    type="radio"
-                    id="color_green"
-                    name="color"
-                    class="peer sr-only"
-                    checked
-                  />
-  
-                  <span
-                    class="block h-6 w-6 rounded-full border border-gray-200 bg-green-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"
-                  ></span>
-                </label>
-  
-                <label for="color_blue" class="cursor-pointer">
-                  <input
-                    type="radio"
-                    id="color_blue"
-                    name="color"
-                    class="peer sr-only"
-                  />
-  
-                  <span
-                    class="block h-6 w-6 rounded-full border border-gray-200 bg-blue-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"
-                  ></span>
-                </label>
-  
-                <label for="color_pink" class="cursor-pointer">
-                  <input
-                    type="radio"
-                    id="color_pink"
-                    name="color"
-                    class="peer sr-only"
-                  />
-  
-                  <span
-                    class="block h-6 w-6 rounded-full border border-gray-200 bg-pink-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"
-                  ></span>
-                </label>
-  
-                <label for="color_red" class="cursor-pointer">
-                  <input
-                    type="radio"
-                    id="color_red"
-                    name="color"
-                    class="peer sr-only"
-                  />
-  
-                  <span
-                    class="block h-6 w-6 rounded-full border border-gray-200 bg-red-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"
-                  ></span>
-                </label>
-  
-                <label for="color_indigo" class="cursor-pointer">
-                  <input
-                    type="radio"
-                    id="color_indigo"
-                    name="color"
-                    class="peer sr-only"
-                  />
-  
-                  <span
-                    class="block h-6 w-6 rounded-full border border-gray-200 bg-indigo-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"
-                  ></span>
-                </label>
+                                  <span
+                    class="block rounded-full border border-gray-200 px-3 py-1 text-xs peer-checked:bg-gray-100"
+                  >
+                  {{$product->category}}
+                  </span>
+               
               </div>
             </fieldset>
   
-            <fieldset>
-              <legend class="text-lg font-bold">Material</legend>
-  
-              <div class="mt-2 flex gap-1">
-                <label for="material_cotton" class="cursor-pointer">
-                  <input
-                    type="radio"
-                    id="material_cotton"
-                    name="material"
-                    class="peer sr-only"
-                    checked
-                  />
-  
-                  <span
-                    class="block rounded-full border border-gray-200 px-3 py-1 text-xs peer-checked:bg-gray-100"
-                  >
-                    Cotton
-                  </span>
-                </label>
-  
-                <label for="material_wool" class="cursor-pointer">
-                  <input
-                    type="radio"
-                    id="material_wool"
-                    name="material"
-                    class="peer sr-only"
-                    checked
-                  />
-  
-                  <span
-                    class="block rounded-full border border-gray-200 px-3 py-1 text-xs peer-checked:bg-gray-100"
-                  >
-                    Wool
-                  </span>
-                </label>
-              </div>
-            </fieldset>
-  
-            <div class="rounded border bg-gray-100 p-4">
+            {{-- <div class="rounded border bg-gray-100 p-4">
               <p class="text-sm">
                 <span class="block"> Pay as low as $3/mo with 0% APR. </span>
   
                 <a href="" class="mt-1 inline-block underline"> Find out more </a>
               </p>
-            </div>
+            </div> --}}
   
             <div>
-              <p class="text-xl font-bold">$19.99</p>
+              <p class="text-xl font-bold mb-8 mt-8">{{$product->price}} JD</p>
             </div>
-  
+            <form action="/addToCart" method="POST">
+              @csrf
+              @method('POST')
+              <input type="hidden" name="product_id" id="product_id" value={{$product->id}}>
+              <input type="hidden" name="quantity" id="quantity" value='1'>
+              
             <button
               type="submit"
-              class="w-full rounded bg-red-700 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white"
+              class="w-full mb-8 rounded log_btn px-6 py-3 text-sm font-bold uppercase tracking-wide text-white"
             >
               Add to cart
             </button>
-  
+            </form>
+
+            <form action="/wishlistAddNew" method="POST">
+              @csrf
+              {{-- <input type="hidden" name="user_id" id="user_id" value={{}}> --}}
+              <input type="hidden" name="product_id" id="product_id" value={{$product->id}}>
             <button
-              type="button"
+              type="submit"
               class="w-full rounded border border-gray-300 bg-gray-100 px-6 py-3 text-sm font-bold uppercase tracking-wide"
             >
-              Notify when on sale
+              Add To Wishlist
             </button>
           </form>
         </div>
@@ -378,12 +286,10 @@
             class="prose max-w-none [&>iframe]:mt-6 [&>iframe]:aspect-video [&>iframe]:w-full [&>iframe]:rounded-xl"
           >
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ad
-              labore nostrum, a explicabo iste est dolorem deserunt id ullam magni
-              accusamus saepe, nulla sed sint reiciendis, aperiam cumque officiis!
+              {{$product->description}}
             </p>
   
-            <p>
+            {{-- <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
               eveniet ipsam mollitia nesciunt illo! Suscipit, corrupti!
             </p>
@@ -395,7 +301,7 @@
               <li>Breathable fabric</li>
               <li>Odour prevention</li>
               <li>Made from recycled materials</li>
-            </ul>
+            </ul> --}}
           </div>
         </div>
       </div>
@@ -406,368 +312,11 @@
 
 
 {{-- Reviews --}}
+{{-- @include('partials._single-product-reviews'); --}}
+<x-single-product-reviews :reviews="$reviews" :productid="$product->id" :rateAvg="$rateAvg"/>
 
-<section>
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-      <h2 class="text-xl font-bold sm:text-2xl">Customer Reviews</h2>
-  
-      <div class="mt-4 flex items-center">
-        <p class="text-3xl font-medium">
-          3.8
-          <span class="sr-only"> Average review score </span>
-        </p>
-  
-        <div class="ml-4">
-          <div class="-ml-1 flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-yellow-400"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-yellow-400"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-yellow-400"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-yellow-400"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-gray-200"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-              />
-            </svg>
-          </div>
-  
-          <p class="mt-0.5 text-xs text-gray-500">Based on 48 reviews</p>
-        </div>
-      </div>
-  
-      <div class="mt-8 grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-2">
-        <blockquote>
-          <header class="sm:flex sm:items-center">
-            <div class="-ml-1 flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-gray-200"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-            </div>
-  
-            <p class="mt-2 font-medium sm:ml-4 sm:mt-0">
-              The best thing money can buy!
-            </p>
-          </header>
-  
-          <p class="mt-2 text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-            possimus fuga dolor rerum dicta, ipsum laboriosam est totam iusto
-            alias incidunt cum tempore aliquid aliquam error quisquam ipsam
-            asperiores! Iste?
-          </p>
-  
-          <footer class="mt-4">
-            <p class="text-xs text-gray-500">John Doe - 12th January, 2024</p>
-          </footer>
-        </blockquote>
-  
-        <blockquote>
-          <header class="sm:flex sm:items-center">
-            <div class="-ml-1 flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-gray-200"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-            </div>
-  
-            <p class="mt-2 font-medium sm:ml-4 sm:mt-0">
-              The best thing money can buy!
-            </p>
-          </header>
-  
-          <p class="mt-2 text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-            possimus fuga dolor rerum dicta, ipsum laboriosam est totam iusto
-            alias incidunt cum tempore aliquid aliquam error quisquam ipsam
-            asperiores! Iste?
-          </p>
-  
-          <footer class="mt-4">
-            <p class="text-xs text-gray-500">John Doe - 12th January, 2024</p>
-          </footer>
-        </blockquote>
-  
-        <blockquote>
-          <header class="sm:flex sm:items-center">
-            <div class="-ml-1 flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-gray-200"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-            </div>
-  
-            <p class="mt-2 font-medium sm:ml-4 sm:mt-0">
-              The best thing money can buy!
-            </p>
-          </header>
-  
-          <p class="mt-2 text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-            possimus fuga dolor rerum dicta, ipsum laboriosam est totam iusto
-            alias incidunt cum tempore aliquid aliquam error quisquam ipsam
-            asperiores! Iste?
-          </p>
-  
-          <footer class="mt-4">
-            <p class="text-xs text-gray-500">John Doe - 12th January, 2024</p>
-          </footer>
-        </blockquote>
-  
-        <blockquote>
-          <header class="sm:flex sm:items-center">
-            <div class="-ml-1 flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-yellow-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-gray-200"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-            </div>
-  
-            <p class="mt-2 font-medium sm:ml-4 sm:mt-0">
-              The best thing money can buy!
-            </p>
-          </header>
-  
-          <p class="mt-2 text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-            possimus fuga dolor rerum dicta, ipsum laboriosam est totam iusto
-            alias incidunt cum tempore aliquid aliquam error quisquam ipsam
-            asperiores! Iste?
-          </p>
-  
-          <footer class="mt-4">
-            <p class="text-xs text-gray-500">John Doe - 12th January, 2024</p>
-          </footer>
-        </blockquote>
-      </div>
-    </div>
-  </section>
 
-  <section>
+  {{-- <section>
     <div class="mx-auto max-w-screen-xl px-4 py-8">
       <div class="relative mx-auto max-w-3xl text-center">
         <span
@@ -1261,7 +810,7 @@
       </div>
   
     </div>
-  </section>
+  </section> --}}
 
 
  

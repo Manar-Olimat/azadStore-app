@@ -88,18 +88,18 @@
           <i class="fa-regular fa-heart"></i>
       </div>
       <div class="text-xs leading-3">Wishlist</div>
-      <div
+      {{-- <div
           class="absolute bg-red-500 right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-          8</div>
+          8</div> --}}
   </a>
   <a href="/cart" class="text-center pl-6 text-gray-700 hover:text-primary transition relative">
       <div class="text-2xl">
           <i class="fa-solid fa-bag-shopping"></i>
       </div>
       <div class="text-xs leading-3">Cart</div>
-      <div
+      {{-- <div
           class="absolute bg-red-500 -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-          2</div>
+          2</div> --}}
   </a>
   {{-- <a href="#" class="text-center text-gray-700 hover:text-primary transition relative">
       <div class="text-2xl">
@@ -122,12 +122,12 @@
       <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">{{auth()->user()->email}}</span>
       </div>
       <ul class="py-1" aria-labelledby="user-menu-button">
-      <li>
+      {{-- <li>
         <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a>
-      </li>
+      </li> --}}
       {{-- {true ? :} --}}
-      @if (auth()->user()->type)
-          <li>  <a href="/store" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Store</a>
+      @if (auth()->user()->type=='admin')
+          <li>  <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
       </li>
       {{-- @else --}}
           

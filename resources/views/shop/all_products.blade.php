@@ -4,7 +4,7 @@
  
    
 @include('partials._all-products-banner');
-@include('partials._all-products-filters');
+{{-- @include('partials._all-products-filters'); --}}
 
    
 

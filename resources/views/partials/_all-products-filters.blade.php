@@ -58,7 +58,7 @@ Live
                                     <div class="flex space-x-6 justify-center items-center">
                                         <label
                                             class="mr-2 text-sm leading-3 dark:text-gray-300 font-normal text-gray-600"
-                                            for="Leather">necklace</label>
+                                            for="Leather">cloth</label>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ Live
                                     <div class="flex space-x-6 justify-center items-center">
                                         <label
                                             class="mr-2 text-sm leading-3 dark:text-gray-300 font-normal text-gray-600"
-                                            for="Cotton">cloth</label>
+                                            for="Cotton">shoes</label>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@ Live
                                     <div class="flex space-x-6 justify-center items-center">
                                         <label
                                             class="mr-2 text-sm leading-3 dark:text-gray-300 font-normal text-gray-600"
-                                            for="Fabric">list</label>
+                                            for="Fabric">earrings</label>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@ Live
                                     <div class="flex space-x-6 justify-center items-center">
                                         <label
                                             class="mr-2 text-sm leading-3 dark:text-gray-300 font-normal text-gray-600"
-                                            for="Crocodile">Crocodile</label>
+                                            for="Crocodile">accessories</label>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ Live
                                     <div class="flex space-x-6 justify-center items-center">
                                         <label
                                             class="mr-2 text-sm leading-3 dark:text-gray-300 font-normal text-gray-600"
-                                            for="Wool">Wool</label>
+                                            for="Wool">bedroom</label>
                                     </div>
                                 </div>
                             </div>

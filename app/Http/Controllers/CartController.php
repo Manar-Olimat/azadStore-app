@@ -45,8 +45,27 @@ class CartController extends Controller
     }
 
     public function checkout(){
+        $user_products=Cart::all()->where('user_id',Auth::user()->id)->where('isDeleted',0);
+    // $user_products=Products::all()->where('user_id',Auth::user()->id);
+    $products = [];
+        $total = 0;
+        foreach ($user_products as $value) {
+            # code...
+            // $total += Products::find($value->product_id)->price *Products::find($value->product_id)->price;
+            // dd($user_products);
+            array_push($products, ['products'=>Products::find($value->product_id),
+            'quantity'=>Cart::where('product_id',$value->product_id)->where('isDeleted',0)->get('quantity')] );
+        }
         
+
+        return view('orders.checkout',['products'=>$products,'count'=>count($products),'total'=>$total]);
+
     }
 
+    function payment(){
+        // Cart::latest()->update(['isDeleted'=>1]);
+
+        redirect('/');
+    }
 
 }

@@ -62,7 +62,10 @@ public function authenticate(Request $request){
 // dd($formFields);
       if(auth()->attempt($formFields)){
           $request->session()->regenerate();
+if(Auth::user()->type=='admin'){
+  return redirect('/dashboard');
 
+}
           return redirect('/');
   
       }

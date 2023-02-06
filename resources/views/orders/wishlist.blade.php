@@ -33,8 +33,15 @@
               <span class="text-center w-1/5 font-semibold text-sm">{{$item->price}}</span>
               <span class="text-center w-1/5 font-semibold text-sm">        
                 <a href="/removeFromWishlist?id={{$item->id}}" class="font-bold hover:text-red-500 text-gray-500 text-xs">Remove </a>&nbsp&nbsp&nbsp
-                <a href="#" class="font-bold hover:text-purple-500 text-gray-500 text-xs">Add To Cart</a>
-            </span>
+                <form action="/addToCart" method="POST">
+                  @csrf
+                  @method('POST')
+                  <input type="hidden" name="product_id" id="product_id" value={{$item->id}}>
+                  <input type="hidden" name="quantity" id="quantity" value='1'>
+                  
+                <button class="font-bold hover:text-purple-500 text-gray-500 text-xs">Add To Cart</button>
+                </form>
+               </span>
             </div>
             @endforeach
            
